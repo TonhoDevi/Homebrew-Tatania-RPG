@@ -1,0 +1,194 @@
+/* ========================================
+   PÁGINA DE COMPÊNDIO (compendium-races.html)
+   NÃO USAR EM OUTRAS PÁGINAS
+======================================== */
+
+.compendio-header {
+    background: linear-gradient(135deg, var(--cor5), var(--cor1));
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--cor11);
+}
+
+.compendio-header h1 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3rem;
+    color: var(--cor3);
+    margin-bottom: 15px;
+}
+
+.compendio-header p {
+    color: var(--cor8);
+    font-size: 1.2rem;
+}
+
+.filtros-section {
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--cor14));
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 20px;
+    border: 2px solid var(--cor11);
+    background: var(--cor15);
+    color: var(--cor8);
+    font-size: 1rem;
+}
+
+.filter-select {
+    padding: 12px 20px;
+    border: 2px solid var(--cor11);
+    background: var(--cor15);
+    color: var(--cor8);
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.racas-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--cor13));
+}
+
+.racas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.raca-card {
+    background: linear-gradient(135deg, var(--cor14), var(--cor15));
+    border: 3px solid var(--cor11);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    clip-path: polygon(
+        15px 0,
+        100% 0,
+        100% calc(100% - 15px),
+        calc(100% - 15px) 100%,
+        0 100%,
+        0 15px
+    );
+}
+
+.raca-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--sombra-crimson-forte);
+    border-color: var(--cor3);
+}
+
+.raca-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--cor11);
+}
+
+.raca-info {
+    padding: 20px;
+}
+
+.raca-info h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--cor3);
+    margin-bottom: 10px;
+}
+
+.raca-size,
+.raca-speed {
+    font-size: 0.9rem;
+    color: var(--cor10);
+    margin-bottom: 5px;
+}
+
+.raca-preview {
+    color: var(--cor8);
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.btn-small {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.modal-large {
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: var(--cor3);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--cor6);
+    transform: rotate(90deg);
+}
+
+#racaDetails h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 2.5rem;
+    color: var(--cor3);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#racaDetails h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--cor3);
+    margin: 30px 0 15px;
+    border-bottom: 2px solid var(--cor11);
+    padding-bottom: 10px;
+}
+
+#racaDetails h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#racaDetails ul {
+    list-style: none;
+    padding: 0;
+}
+
+#racaDetails ul li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--cor2);
+    color: var(--cor8);
+}
+
+#racaDetails p {
+    color: var(--cor8);
+    line-height: 1.8;
+}

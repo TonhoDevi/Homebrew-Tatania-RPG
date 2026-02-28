@@ -1,0 +1,83 @@
+/* ========================================
+   VARIÁVEIS CSS - SISTEMA DE CORES
+   
+   NOMENCLATURA:
+   --cor1 a --cor25: Cores principais
+   --transp-*: Transparências
+   --brilho-*: Efeitos de luz
+   --sombra-*: Sombras
+   --impressao-*: Cores para impressão
+======================================== */
+:root {
+    /* === GRADIENTES E FUNDOS === */
+    --cor1: #000000;        /* Preto puro - gradientes externos */
+    --cor5: #a27209;        /* Marrom escuro - fundo geral */
+    --cor6: #ff0000bb;      /* Vermelho translúcido - placas */
+    --cor13: #ddd6a3;       /* Bege claro - fundo principal */
+    --cor14: #ba9620;       /* Dourado escuro - fundo seções */
+    --cor15: #820b0b;       /* Vermelho escuro - fundo cards */
+    --cor16: #5b0909;       /* Vermelho muito escuro - stat-boxes */
+    --cor17: #880f0f;       /* Vermelho médio - bonus-box */
+    
+    /* === BORDAS === */
+    --cor2: #ebdd18;        /* Amarelo dourado - bordas externas */
+    --cor11: #dbcd15;       /* Amarelo - bordas internas */
+    --cor23: #dcb30d;       /* Amarelo forte - checkboxes */
+    
+    /* === TEXTOS === */
+    --cor3: #dcc70a;        /* Amarelo ouro - destaques principais */
+    --cor4: #5b0606;        /* Vermelho escuro - títulos fixos */
+    --cor8: #fffce1;        /* Bege clarinho - texto geral */
+    --cor10: #baa32d;       /* Dourado médio - textos secundários */
+    --cor18: #c1af0f;       /* Dourado - labels de atributos */
+    --cor19: #efff0a;       /* Amarelo brilhante - bônus de perícia */
+    --cor20: #460101;       /* Vermelho escuríssimo - texto fixo */
+    
+    /* === INPUTS E CAIXAS === */
+    --cor12: #a71414;       /* Vermelho forte - fundo de inputs */
+    --cor21: #270101;       /* Quase preto - fundo de checkboxes */
+    --cor22: #c5a60a;       /* Dourado - fundo proficiência */
+    --cor24: #890000;       /* Vermelho médio - atributo proficiente */
+    --cor25: #380000;       /* Vermelho escuro - atributo proficiente (borda) */
+    
+    /* === EFEITOS === */
+    --cor7: #620f0f;        /* Vermelho - efeito de brilho */
+    --cor9: #070000;        /* Reservado */
+    
+    /* === TRANSPARÊNCIAS === */
+    --transp-escuro: rgba(26, 0, 0, 0.95);
+    --transp-escuro-medio: rgba(26, 0, 0, 0.8);
+    --transp-escuro-leve: rgba(26, 0, 0, 0.6);
+    --transp-marrom: rgba(45, 10, 10, 0.6);
+    --transp-marrom-escuro: rgba(45, 10, 10, 0.9);
+    --transp-vermelho: rgba(139, 0, 0, 0.5);
+    --transp-crimson: rgba(220, 20, 60, 0.3);
+    --transp-preto: rgba(0, 0, 0, 0.6);
+    --transp-preto-total: rgba(0, 0, 0, 0.8);
+    --transp-preto-forte: rgba(0, 0, 0, 0.9);
+    --transp-preto-completo: rgba(0, 0, 0, 0.95);
+    
+    /* === BRILHOS === */
+    --brilho-vermelho-leve: rgba(139, 0, 0, 0.03);
+    --brilho-vermelho-medio: rgba(139, 0, 0, 0.05);
+    --brilho-crimson-leve: rgba(220, 20, 60, 0.02);
+    --brilho-crimson-medio: rgba(220, 20, 60, 0.1);
+    --brilho-crimson-forte: rgba(220, 20, 60, 0.2);
+    --brilho-laranja: rgba(233, 13, 13, 0.5);
+    
+    /* === SOMBRAS === */
+    --sombra-preta: rgba(0, 0, 0, 0.8);
+    --sombra-preta-forte: rgba(0, 0, 0, 0.9);
+    --sombra-preta-leve: rgba(0, 0, 0, 0.5);
+    --sombra-vermelho: rgba(139, 0, 0, 0.3);
+    --sombra-crimson: rgba(220, 20, 60, 0.4);
+    --sombra-crimson-forte: rgba(220, 50, 20, 0.6);
+    --sombra-crimson-intensa: rgba(50, 13, 88, 0.8);
+    --sombra-crimson-total: rgba(139, 6, 6, 0.9);
+    --sombra-laranja: rgba(220, 20, 20, 0.5);
+    
+    /* === IMPRESSÃO === */
+    --impressao-preto: #000;
+    --impressao-branco: white;
+    --impressao-borda: #000;
+}

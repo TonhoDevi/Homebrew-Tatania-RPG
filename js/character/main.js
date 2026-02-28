@@ -85,6 +85,7 @@ function getCurrentCharacter() {
         magicItems: magicItems,
         skillProficiencies: skillProficiencies,
         attacks: attacks,
+        abilities: abilities,
         characterImage: characterImageData
 
     };
@@ -164,6 +165,8 @@ function loadCharacterData(char) {
     document.getElementById('anotacoes').value = char.anotacoes || '';
     characterImageData = char.characterImage || null;
     individualsUnit = char.individualsUnit || [];
+    // habilidades customizadas do personagem
+    abilities = char.abilities || [];
 
     spells = char.spells || {
         truques: [], nivel1: [], nivel2: [], nivel3: [], nivel4: [],
@@ -186,6 +189,7 @@ function loadCharacterData(char) {
     renderAttacks();
     calculateModifiers();
     renderIndiduals();
+    renderAbilities();
     displayCharacterImage(characterImageData);
 }
 
@@ -474,4 +478,5 @@ renderInventory();
 renderMagicItems();
 renderSpells();
 renderAttacks();
+renderAbilities();
 enableAutoBackup();

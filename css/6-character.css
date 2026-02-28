@@ -748,6 +748,18 @@
     padding: 8px 12px;
 }
 
+/* styling para o campo de usos nas habilidades */
+.ability-uses {
+    background: var(--cor12);
+    border: 2px solid var(--cor2);
+    color: var(--cor19);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 8px 12px;
+    width: 60px;
+    margin-left: 10px;
+}
+
 
 .individuals-unit-expand {
     background: transparent;

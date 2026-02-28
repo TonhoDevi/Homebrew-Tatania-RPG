@@ -13,29 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/character.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/1-variables.css">
+<link rel="stylesheet" href="css/2-base.css">
+<link rel="stylesheet" href="css/3-components.css">
+<link rel="stylesheet" href="css/4-navbar.css">
+<link rel="stylesheet" href="css/5-home.css">
+<link rel="stylesheet" href="css/6-character.css">
+<link rel="stylesheet" href="css/7-compendium.css">
+<link rel="stylesheet" href="css/8-responsive.css">
+
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                🎲 D&D 5e Homebrew
-            </a>
-            <ul class="navbar-menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="character-sheet.html" class="active">Ficha de Personagem</a></li>
-                <li><a href="compendium-races.html">Compêndio de Raças</a></li>
-            </ul>
-            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
-        </div>
-    </nav>
+    
     <div class="app-container">
         <div class="header">
             <h1>Ficha de Personagem</h1>
@@ -340,7 +329,12 @@
                     <div class="attack-list" id="attackList"></div>
                     <button class="btn btn-secondary" onclick="addAttack()" style="width: 100%; margin-top: 10px;">+ Adicionar Ataque</button>
                 </div>
-
+                <!-- Habilidades-->
+                <div class="section">
+                    <div class="section-title">Habilidades e Características</div>
+                    <div class="abilities-list" id="abilitiesList"></div>
+                    <button class="btn btn-secondary" onclick="addAbility()" style="width: 100%; margin-top: 10px;">+ Adicionar Habilidade</button>
+                </div>
                 <!-- Magias -->
                 <div class="section">
                     <div class="section-title">Magias</div>
@@ -668,10 +662,12 @@
         </div>
     </footer>
     <!-- JavaScript -->
-    <script src="js/spells.js"></script>
-    <script src="js/character.js"></script>
-    <script src="js/inventory.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/individuals.js"></script>
+    <script src="js/shared/navbar.js"></script>
+    <script src="js/character/character.js"></script>
+    <script src="js/character/individuals.js"></script>
+    <script src="js/character/habilits.js"></script>
+    <script src="js/character/inventory.js"></script>
+    <script src="js/character/main.js"></script>
+    <script src="js/character/spells.js"></script>
 </body>
 </html>

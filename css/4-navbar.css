@@ -1,0 +1,99 @@
+/* ========================================
+   NAVBAR E FOOTER
+   Usado em: index.html, character-sheet.html, compendium-races.html
+======================================== */
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--cor1), var(--cor5));
+    border-bottom: 3px solid var(--cor11);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px var(--sombra-preta);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.navbar-logo {
+    font-family: 'Pirata One', cursive;
+    font-size: 1.8rem;
+    color: var(--cor3);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px var(--sombra-preta);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li a {
+    color: var(--cor8);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+    color: var(--cor3);
+    border-bottom-color: var(--cor3);
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--cor3);
+    color: var(--cor3);
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: var(--cor1);
+    border-top: 3px solid var(--cor11);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--cor8);
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--cor3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--cor2);
+}
