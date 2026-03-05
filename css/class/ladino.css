@@ -1,0 +1,89 @@
+/* =============================================
+   PÁGINA DE CLASSE — LADINO
+============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+:root {
+    --cls-accent: #4a8fa0;
+    --cls-accent-dark: #2e6070;
+    --cls-accent-glow: rgba(74,143,160,.25);
+    --t: .25s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+    background-color: var(--cor1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+    font-family: 'Crimson Text', Georgia, serif;
+    color: var(--cor8);
+    min-height: 100vh;
+}
+
+/* HERO CINEMATOGRÁFICO */
+.class-hero {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    display: flex; align-items: flex-end;
+}
+
+.hero-bg-fallback {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0a0a12 0%, #101820 40%, #0d1a22 100%);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.hero-bg-fallback-icon {
+    font-size: 14rem;
+    opacity: .04;
+    user-select: none;
+}
+
+.hero-content {
+    position: relative; z-index: 2;
+    width: 100%; max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 48px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 24px;
+}
+
+.back-link {
+    position: absolute; top: 20px; left: 40px;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--cor10);
+    font-family: 'Cinzel', serif;
+    font-size: .68rem; letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var(--t);
+    z-index: 10;
+}
+
+.hero-title {
+    font-family: 'Pirata One', cursive;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    color: var(--cor19);
+    line-height: 1;
+    text-shadow: 0 0 60px rgba(74,143,160,.4), 0 4px 16px rgba(0,0,0,.9);
+}
+
+/* PROGRESSÃO E TABELAS */
+.level-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--cor11);
+    border-radius: 8px;
+    background: linear-gradient(160deg, var(--cor15) 0%, var(--cor5) 100%);
+}
+
+.level-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* ... (O restante do seu CSS original continua aqui) ... */
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .page-layout { grid-template-columns: 1fr; padding: 24px 20px 60px; }
+    .hero-content { flex-direction: column; align-items: flex-start; }
+}

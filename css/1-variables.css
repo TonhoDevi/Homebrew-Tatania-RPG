@@ -1,129 +1,212 @@
 /* ========================================
-   PALETA GRIMÓRIO — TEMA ALTERNATIVO
-   Arquivo: css/variables-grimorio.css
-
-   Mesmos nomes do sistema original,
-   paleta substituída pelo tema Grimório Sombrio.
-   Para testar: troque o import de 1-variables.css
-   por este arquivo.
-
-   MAPEAMENTO DA PALETA:
-   Vermelho/Crimson original → Dourado/Âmbar
-   Fundo escuro avermelhado  → Pedra/Tinta escura
-   Destaques amarelos        → Ouro antigo / Pergaminho
+   SISTEMA DE CORES E VARIÁVEIS GLOBAIS
+   Paleta: Grimório Sombrio (Dourado/Âmbar)
+   
+   ORGANIZAÇÃO:
+   - Blocos numerados por função
+   - Nomes descritivos e claros
+   - Aliases retrocompatíveis
 ======================================== */
 :root {
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 01: FUNDAÇÃO — Cores Base de Fundo (Tons Escuros)
+    ═══════════════════════════════════════════════════════════════ */
+    --color-foundation-darkest:     #0a0805;  /* Tinta profunda   — Gradientes externos  */
+    --color-foundation-dark:        #2a2318;  /* Pedra escura     — Fundo geral         */
+    --color-foundation-medium:      #3d3222;  /* Pedra média      — Inputs, cards       */
+    --color-foundation-light:       #574832;  /* Pedra clara      — Bonus-box, destaques*/
+    --color-foundation-deep:        #1e1a10;  /* Pedra profunda   — Stat-boxes          */
 
-    /* =============================================
-       GRADIENTES E FUNDOS
-    ============================================= */
-    --cor1:  #0a0805;   /* Tinta profunda   — gradientes externos      */
-    --cor5:  #2a2318;   /* Pedra escura     — fundo geral               */
-    --cor6:  #b87d2ebb; /* Âmbar translúcido— placas / overlay          */
-    --cor13: #e8d9b5;   /* Pergaminho claro — fundo principal            */
-    --cor14: #8b6914;   /* Ouro escuro      — fundo de seções            */
-    --cor15: #3d3222;   /* Pedra média      — fundo de cards             */
-    --cor16: #1e1a10;   /* Pedra profunda   — stat-boxes                 */
-    --cor17: #574832;   /* Pedra clara      — bonus-box / destaques bg   */
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 02: PRIMÁRIA — Fundo Principal Claro
+    ═══════════════════════════════════════════════════════════════ */
+    --color-primary-light:          #e8d9b5;  /* Pergaminho claro — Fundo principal     */
 
-    /* =============================================
-       BORDAS
-    ============================================= */
-    --cor2:  #c9a84c;   /* Ouro             — bordas externas            */
-    --cor11: #b87d2e;   /* Âmbar            — bordas internas            */
-    --cor23: #c9a84c;   /* Ouro             — checkboxes / detalhes      */
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 03: ACENTOS — Ouro (Bordas, Destaques, Seções)
+    ═══════════════════════════════════════════════════════════════ */
+    --color-accent-gold-bright:     #f0c96a;  /* Ouro brilhante   — Destaques principais */
+    --color-accent-gold-medium:     #c9a84c;  /* Ouro médio       — Bordas externas    */
+    --color-accent-gold-dark:       #8b6914;  /* Ouro escuro      — Fundo seções       */
+    --color-accent-amber:           #b87d2e;  /* Âmbar            — Bordas internas    */
+    --color-accent-amber-translucid:#b87d2ebb;/* Âmbar translúcido— Placas/overlay     */
 
-    /* =============================================
-       TEXTOS
-    ============================================= */
-    --cor3:  #f0c96a;   /* Ouro brilhante   — destaques principais       */
-    --cor4:  #1a1008;   /* Sombra           — títulos sobre fundo claro  */
-    --cor8:  #f5edd6;   /* Pergaminho       — texto geral                */
-    --cor10: #9c8055;   /* Dourado muted    — textos secundários          */
-    --cor18: #c9a84c;   /* Ouro médio       — labels de atributos        */
-    --cor19: #f5de6a;   /* Ouro brilhante+  — bônus / números em destaque*/
-    --cor20: #2c1f0e;   /* Marrom escuro    — texto sobre fundo claro    */
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 04: TEXTOS — Cores de Tipografia
+    ═══════════════════════════════════════════════════════════════ */
+    --color-text-primary:           #f5edd6;  /* Pergaminho       — Texto geral         */
+    --color-text-secondary:         #9c8055;  /* Dourado muted    — Textos secundários  */
+    --color-text-label:             #c9a84c;  /* Ouro médio       — Labels de atributos*/
+    --color-text-highlight:         #f5de6a;  /* Ouro brilhante+  — Bônus/números      */
+    --color-text-dark:              #2c1f0e;  /* Marrom escuro    — Sobre fundo claro  */
+    --color-text-on-light:          #1a1008;  /* Sombra           — Títulos em claros  */
 
-    /* =============================================
-       INPUTS E CAIXAS
-    ============================================= */
-    --cor12: #3d3222;   /* Pedra média      — fundo de inputs            */
-    --cor21: #1a1008;   /* Tinta escura     — fundo de checkboxes        */
-    --cor22: #8b6914;   /* Ouro escuro      — proficiência               */
-    --cor24: #500f07;   /* Pedra clara      — atributo proficiente        */
-    --cor25: #fcd330;   /* Pedra média      — atributo proficiente borda  */
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 05: ESTADOS — Proficiência e UI Interativa
+    ═══════════════════════════════════════════════════════════════ */
+    --color-state-proficient-bg:    #500f07;  /* Atributo proficiente (fundo)          */
+    --color-state-proficient-border:#fcd330;  /* Atributo proficiente (borda)          */
+    --color-state-proficient-accent:#8b6914;  /* Proficiência (efeito)                 */
 
-    /* =============================================
-       EFEITOS
-    ============================================= */
-    --cor7:  #6b3a10;   /* Brasa            — efeito de brilho/glow      */
-    --cor9:  #070503;   /* Preto-marrom     — reservado                  */
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 06: EFEITOS — Brilhos e Glows
+    ═══════════════════════════════════════════════════════════════ */
+    --color-effect-ember:           #6b3a10;  /* Brasa            — Efeito glow        */
 
-    /* =============================================
-       CORES DE CATEGORIA (extensão do sistema)
-    ============================================= */
-    --cor-cat-global:       #2e6b4e;  /* Verde floresta   — Globais       */
-    --cor-cat-tribal:       #7a3a14;  /* Siena queimado   — Tribais       */
-    --cor-cat-mistica:      #4a2878;  /* Violeta profundo — Místicas      */
-    --cor-cat-sobrenatural: #8b3048;  /* Carmesim rosado  — Sobrenaturais */
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 07: CATEGORIAS — Cores de Sistema de Magia/Classe
+    ═══════════════════════════════════════════════════════════════ */
+    --color-category-global:        #2e6b4e;  /* Verde floresta   — Globais            */
+    --color-category-tribal:        #7a3a14;  /* Siena queimado   — Tribais            */
+    --color-category-mystical:      #4a2878;  /* Violeta profundo — Místicas           */
+    --color-category-supernatural:  #8b3048;  /* Carmesim rosado  — Sobrenaturais      */
 
-    --cor-cat-global-text:       #5fbd8e;
-    --cor-cat-tribal-text:       #d48040;
-    --cor-cat-mistica-text:      #a070e8;
-    --cor-cat-sobrenatural-text: #e07090;
+    --color-category-global-text:        #5fbd8e;
+    --color-category-tribal-text:        #d48040;
+    --color-category-mystical-text:      #a070e8;
+    --color-category-supernatural-text:  #e07090;
 
-    /* Fundos translúcidos das badges de categoria */
-    --cor-cat-global-bg:         rgba( 46,107, 78, .15);
-    --cor-cat-tribal-bg:         rgba(122, 58, 20, .15);
-    --cor-cat-mistica-bg:        rgba( 74, 40,120, .15);
-    --cor-cat-sob-bg:            rgba(139, 48, 72, .15);
+    --color-category-global-bg:         rgba( 46,107, 78, .15);
+    --color-category-tribal-bg:         rgba(122, 58, 20, .15);
+    --color-category-mystical-bg:       rgba( 74, 40,120, .15);
+    --color-category-supernatural-bg:   rgba(139, 48, 72, .15);
 
-    /* =============================================
-       TRANSPARÊNCIAS
-       (mapeado: escuro → tinta, marrom → pedra,
-        vermelho → âmbar, crimson → dourado)
-    ============================================= */
-    --transp-escuro:          rgba(10,  8,  5, .95);
-    --transp-escuro-medio:    rgba(10,  8,  5, .80);
-    --transp-escuro-leve:     rgba(10,  8,  5, .60);
-    --transp-marrom:          rgba(42, 35, 24, .60);
-    --transp-marrom-escuro:   rgba(42, 35, 24, .90);
-    --transp-vermelho:        rgba(139,107, 20, .50);  /* âmbar             */
-    --transp-crimson:         rgba(184,125, 46, .30);  /* ouro suave        */
-    --transp-preto:           rgba(0,   0,  0, .60);
-    --transp-preto-total:     rgba(0,   0,  0, .80);
-    --transp-preto-forte:     rgba(0,   0,  0, .90);
-    --transp-preto-completo:  rgba(0,   0,  0, .95);
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 08: TRANSPARÊNCIAS — Sobreposições e Overlays
+    ═══════════════════════════════════════════════════════════════ */
+    --transparency-dark:          rgba(10,  8,  5, .95);
+    --transparency-dark-medium:   rgba(10,  8,  5, .80);
+    --transparency-dark-light:    rgba(10,  8,  5, .60);
+    --transparency-stone:         rgba(42, 35, 24, .60);
+    --transparency-stone-dark:    rgba(42, 35, 24, .90);
+    --transparency-gold:          rgba(139,107, 20, .50);
+    --transparency-gold-soft:     rgba(184,125, 46, .30);
+    --transparency-black:         rgba(0,   0,  0, .60);
+    --transparency-black-strong:  rgba(0,   0,  0, .80);
+    --transparency-black-intense: rgba(0,   0,  0, .90);
+    --transparency-black-complete:rgba(0,   0,  0, .95);
 
-    /* =============================================
-       BRILHOS
-       (mapeado: vermelho/crimson → tons dourados)
-    ============================================= */
-    --brilho-vermelho-leve:   rgba(201,168, 76, .03);
-    --brilho-vermelho-medio:  rgba(201,168, 76, .05);
-    --brilho-crimson-leve:    rgba(184,125, 46, .02);
-    --brilho-crimson-medio:   rgba(184,125, 46, .10);
-    --brilho-crimson-forte:   rgba(184,125, 46, .20);
-    --brilho-laranja:         rgba(201,168, 76, .50);
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 09: BRILHOS — Highlight Effects
+    ═══════════════════════════════════════════════════════════════ */
+    --shine-gold-subtle:          rgba(201,168, 76, .03);
+    --shine-gold-light:           rgba(201,168, 76, .05);
+    --shine-amber-subtle:         rgba(184,125, 46, .02);
+    --shine-amber-light:          rgba(184,125, 46, .10);
+    --shine-amber-medium:         rgba(184,125, 46, .20);
+    --shine-orange:               rgba(201,168, 76, .50);
 
-    /* =============================================
-       SOMBRAS
-       (mapeado: crimson/vermelho → âmbar/ouro antigo)
-    ============================================= */
-    --sombra-preta:           rgba(  0,  0,  0, .80);
-    --sombra-preta-forte:     rgba(  0,  0,  0, .90);
-    --sombra-preta-leve:      rgba(  0,  0,  0, .50);
-    --sombra-vermelho:        rgba(139,107, 20, .30);  /* âmbar escuro      */
-    --sombra-crimson:         rgba(184,125, 46, .40);  /* ouro médio        */
-    --sombra-crimson-forte:   rgba(201,168, 76, .60);  /* ouro brilhante    */
-    --sombra-crimson-intensa: rgba( 80, 60, 20, .80);  /* ouro profundo     */
-    --sombra-crimson-total:   rgba(139,105,  6, .90);  /* ouro escuro total */
-    --sombra-laranja:         rgba(184,125, 46, .50);
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 10: SOMBRAS — Shadow Effects
+    ═══════════════════════════════════════════════════════════════ */
+    --shadow-black:               rgba(  0,  0,  0, .80);
+    --shadow-black-intense:       rgba(  0,  0,  0, .90);
+    --shadow-black-light:         rgba(  0,  0,  0, .50);
+    --shadow-gold-dark:           rgba(139,107, 20, .30);
+    --shadow-gold-medium:         rgba(184,125, 46, .40);
+    --shadow-gold-bright:         rgba(201,168, 76, .60);
+    --shadow-gold-deep:           rgba( 80, 60, 20, .80);
+    --shadow-gold-dark-total:     rgba(139,105,  6, .90);
+    --shadow-amber:               rgba(184,125, 46, .50);
 
-    /* =============================================
-       IMPRESSÃO (mantido igual)
-    ============================================= */
-    --impressao-preto:  #000000;
-    --impressao-branco: #ffffff;
-    --impressao-borda:  #000000;
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 11: IMPRESSÃO — Print Styles
+    ═══════════════════════════════════════════════════════════════ */
+    --print-black:  #000000;
+    --print-white: #ffffff;
+    --print-border: #000000;
+
+    /* ═══════════════════════════════════════════════════════════════
+       BLOCO 99: ALIASES DE RETROCOMPATIBILIDADE
+       (Mapeamento antigo → novo sistema)
+       Permitem que o código existente continue funcionando sem mudanças
+    ═══════════════════════════════════════════════════════════════ */
+    
+    /* FUNDOS */
+    --cor1:  var(--color-foundation-darkest);
+    --cor5:  var(--color-foundation-dark);
+    --cor6:  var(--color-accent-amber-translucid);
+    --cor13: var(--color-primary-light);
+    --cor14: var(--color-accent-gold-dark);
+    --cor15: var(--color-foundation-medium);
+    --cor16: var(--color-foundation-deep);
+    --cor17: var(--color-foundation-light);
+
+    /* BORDAS */
+    --cor2:  var(--color-accent-gold-medium);
+    --cor11: var(--color-accent-amber);
+    --cor23: var(--color-accent-gold-medium);
+
+    /* TEXTOS */
+    --cor3:  var(--color-accent-gold-bright);
+    --cor4:  var(--color-text-on-light);
+    --cor8:  var(--color-text-primary);
+    --cor10: var(--color-text-secondary);
+    --cor18: var(--color-accent-gold-medium);
+    --cor19: var(--color-accent-gold-bright);
+    --cor20: var(--color-text-dark);
+
+    /* INPUTS E BOXES */
+    --cor12: var(--color-foundation-medium);
+    --cor21: var(--color-text-on-light);
+    --cor22: var(--color-accent-gold-dark);
+    --cor24: var(--color-state-proficient-bg);
+    --cor25: var(--color-state-proficient-border);
+
+    /* EFEITOS */
+    --cor7:  var(--color-effect-ember);
+    --cor9:  #070503;
+
+    /* CATEGORIAS */
+    --cor-cat-global:       var(--color-category-global);
+    --cor-cat-tribal:       var(--color-category-tribal);
+    --cor-cat-mistica:      var(--color-category-mystical);
+    --cor-cat-sobrenatural: var(--color-category-supernatural);
+
+    --cor-cat-global-text:       var(--color-category-global-text);
+    --cor-cat-tribal-text:       var(--color-category-tribal-text);
+    --cor-cat-mistica-text:      var(--color-category-mystical-text);
+    --cor-cat-sobrenatural-text: var(--color-category-supernatural-text);
+
+    --cor-cat-global-bg:         var(--color-category-global-bg);
+    --cor-cat-tribal-bg:         var(--color-category-tribal-bg);
+    --cor-cat-mistica-bg:        var(--color-category-mystical-bg);
+    --cor-cat-sob-bg:            var(--color-category-supernatural-bg);
+
+    /* TRANSPARÊNCIAS */
+    --transp-escuro:             var(--transparency-dark);
+    --transp-escuro-medio:       var(--transparency-dark-medium);
+    --transp-escuro-leve:        var(--transparency-dark-light);
+    --transp-marrom:             var(--transparency-stone);
+    --transp-marrom-escuro:      var(--transparency-stone-dark);
+    --transp-vermelho:           var(--transparency-gold);
+    --transp-crimson:            var(--transparency-gold-soft);
+    --transp-preto:              var(--transparency-black);
+    --transp-preto-total:        var(--transparency-black-strong);
+    --transp-preto-forte:        var(--transparency-black-intense);
+    --transp-preto-completo:     var(--transparency-black-complete);
+
+    /* BRILHOS */
+    --brilho-vermelho-leve:      var(--shine-gold-subtle);
+    --brilho-vermelho-medio:     var(--shine-gold-light);
+    --brilho-crimson-leve:       var(--shine-amber-subtle);
+    --brilho-crimson-medio:      var(--shine-amber-light);
+    --brilho-crimson-forte:      var(--shine-amber-medium);
+    --brilho-laranja:            var(--shine-orange);
+
+    /* SOMBRAS */
+    --sombra-preta:              var(--shadow-black);
+    --sombra-preta-forte:        var(--shadow-black-intense);
+    --sombra-preta-leve:         var(--shadow-black-light);
+    --sombra-vermelho:           var(--shadow-gold-dark);
+    --sombra-crimson:            var(--shadow-gold-medium);
+    --sombra-crimson-forte:      var(--shadow-gold-bright);
+    --sombra-crimson-intensa:    var(--shadow-gold-deep);
+    --sombra-crimson-total:      var(--shadow-gold-dark-total);
+    --sombra-laranja:            var(--shadow-amber);
+
+    /* IMPRESSÃO */
+    --impressao-preto:  var(--print-black);
+    --impressao-branco: var(--print-white);
+    --impressao-borda:  var(--print-border);
 }

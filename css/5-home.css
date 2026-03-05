@@ -4,6 +4,7 @@
 ======================================== */
 
 /* Hero Section */
+.home-hero-section,
 .hero {
     min-height: 70vh;
     display: flex;
@@ -19,10 +20,12 @@
     border-bottom: 4px solid var(--cor11);
 }
 
+.home-hero-content,
 .hero-content {
     max-width: 800px;
 }
 
+.home-hero-title,
 .hero-title {
     font-family: 'Pirata One', cursive;
     font-size: 4.5rem;
@@ -34,6 +37,7 @@
     line-height: 1.2;
 }
 
+.home-hero-subtitle,
 .hero-subtitle {
     font-size: 1.5rem;
     color: var(--cor8);
@@ -41,6 +45,7 @@
     font-style: italic;
 }
 
+.home-hero-buttons,
 .hero-buttons {
     display: flex;
     gap: 20px;
@@ -54,17 +59,20 @@
 }
 
 /* Features Section */
+.home-features-section,
 .features {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--cor13));
 }
 
+.home-container,
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-title {
+.home-section-title,
+.section-title-home {
     font-family: 'Cinzel', serif;
     font-size: 2.5rem;
     color: var(--cor4);
@@ -74,12 +82,14 @@
     letter-spacing: 2px;
 }
 
+.home-features-grid,
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
+.home-feature-card,
 .feature-card {
     background: linear-gradient(135deg, var(--cor14), var(--cor15));
     padding: 30px;
@@ -102,6 +112,7 @@
     border-color: var(--cor3);
 }
 
+.home-feature-icon,
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -120,6 +131,7 @@
     margin-bottom: 20px;
 }
 
+.home-feature-link,
 .feature-link {
     color: var(--cor3);
     text-decoration: none;
@@ -134,11 +146,13 @@
 }
 
 /* About Section */
+.home-about-section,
 .about {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--cor5), var(--cor1));
 }
 
+.home-about-content,
 .about-content {
     max-width: 800px;
     margin: 0 auto;

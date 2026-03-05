@@ -218,7 +218,7 @@ function render() {
         card.innerHTML = `
             <div class="card-image-wrap">
                 <img src="${raca.imagem}" alt="${raca.nome}"
-                     onerror="this.src='assets/races/placeholder.jpg'">
+                     onerror="this.src='/assets/races/placeholder.jpg'">
                 <div class="card-image-overlay"></div>
                 <span class="card-cat-badge">${catLabel}</span>
             </div>

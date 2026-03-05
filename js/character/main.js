@@ -35,6 +35,7 @@ function getCurrentCharacter() {
         deslocNadar: document.getElementById('deslocNadar').value,
         deslocVoar: document.getElementById('deslocVoar').value,
         deslocEscalar: document.getElementById('deslocEscalar').value,
+        salto: document.getElementById('Salto').value,
         dadosVida: document.getElementById('dadosVida').value,
         pvTotais: document.getElementById('pvTotais').value,
         pvAtuais: document.getElementById('pvAtuais').value,
@@ -119,6 +120,7 @@ function loadCharacterData(char) {
     document.getElementById('deslocNadar').value = char.deslocNadar || '15';
     document.getElementById('deslocVoar').value = char.deslocVoar || '-';
     document.getElementById('deslocEscalar').value = char.deslocEscalar || '15';
+    document.getElementById('salto').value = char.Salto || '0';
     document.getElementById('dadosVida').value = char.dadosVida || '';
     document.getElementById('pvTotais').value = char.pvTotais || 0;
     document.getElementById('pvAtuais').value = char.pvAtuais || 0;

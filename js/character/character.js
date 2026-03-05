@@ -88,7 +88,7 @@ function calculateSavingThrows() {
         const checkbox = document.getElementById(checkboxId);
         const isProficient = checkbox.checked;
         
-        const statBox = checkbox.closest('.stat-box');
+        const statBox = checkbox.closest('.character-attribute-box');
         if (isProficient) {
             statBox.classList.add('proficient');
         } else {

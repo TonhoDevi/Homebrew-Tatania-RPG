@@ -8,8 +8,8 @@ const CLASSES_DATA = [
         id: 'ladino',
         nome: 'Ladino',
         subtitulo: 'Versão Épico',
-        pagina: 'class-ladino.html',
-        imagem: 'img/classes/ladino.jpg',
+        pagina: '/html/class/class-ladino.html',
+        //imagem: 'img/classes/ladino.jpg',
         icone: '🗡️',
         cor: '#4a7a8c',        // cor temática para o card
         dadoDeVida: 'd6',

@@ -1,12 +1,13 @@
 /* ========================================
    ATRIBUTOS
 ======================================== */
+.character-stats-grid,
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
-
+.character-attribute-box,
 .stat-box {
     text-align: center;
     padding: 15px;
@@ -18,15 +19,18 @@
     transition: all 0.3s ease;
 }
 
+.character-attribute-box.proficient,
 .stat-box.proficient {
     background: linear-gradient(135deg, var(--cor24));
     border: 3px solid var(--cor25);
 }
 
+.character-attribute-box.proficient::before,
 .stat-box.proficient::before {
     background: var(--cor25);
 }
 
+.character-proficiency-check,
 .stat-prof-check {
     appearance: none;
     position: absolute;
@@ -41,12 +45,14 @@
     transition: all 0.3s ease;
 }
 
+.character-proficiency-check:checked,
 .stat-prof-check:checked {
     background: var(--cor2);
     border-color: var(--cor2);
     transform: rotate(180deg);
 }
 
+.character-proficiency-check:checked::after,
 .stat-prof-check:checked::after {
     content: '⚔';
     position: absolute;
@@ -57,6 +63,7 @@
     color: var(--cor21);
 }
 
+.character-attribute-label,
 .stat-label {
     font-size: 1.0rem;
     font-weight: 700;
@@ -66,6 +73,7 @@
     color: var(--cor18);
 }
 
+.character-attribute-input,
 .stat-input {
     text-align: center;
     margin-bottom: 8px;
@@ -79,6 +87,7 @@
     border: 2px solid var(--cor2);
 }
 
+.character-attribute-modifier,
 .stat-value {
     font-size: 1.8rem;
     font-weight: 700;
@@ -86,6 +95,7 @@
     color: var(--cor3);
 }
 
+.character-saving-throw,
 .stat-save {
     font-size: 1.0rem;
     color: var(--cor8);
@@ -102,12 +112,14 @@
 /* ========================================
    PERÍCIAS
 ======================================== */
+.character-skills-grid,
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
 }
 
+.character-skill-item,
 .skill-item {
     display: flex;
     align-items: center;
@@ -119,6 +131,7 @@
     border-left: 3px solid var(--cor3);
 }
 
+.character-skill-prof-select,
 .skill-prof-select {
     width: auto;
     min-width: 100px;
@@ -130,22 +143,26 @@
     color: var(--cor2);
 }
 
+.character-skill-name,
 .skill-name {
     flex: 1;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: var(--cor8);
 }
 
+.character-skill-value,
 .skill-value {
     font-weight: 700;
+    font-size: 1.2rem;
     color: var(--cor19);
-    min-width: 30px;
-    text-align: right;
+    min-width: 5px;
+    text-align: center;
 }
 
 /* ========================================
    ATAQUES
 ======================================== */
+.character-attack-list,
 .attack-list {
     margin-top: 10px;
 }
@@ -161,6 +178,7 @@
 /* ========================================
    MOEDAS
 ======================================== */
+.character-currency-grid,
 .moedas-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -168,6 +186,7 @@
     margin-top: 10px;
 }
 
+.character-currency-item,
 .moeda-item {
     position: relative;
 }
@@ -178,6 +197,7 @@
     gap: 5px;
 }
 
+.character-currency-icon,
 .moeda-icon {
     width: 20px;
     height: 20px;
@@ -208,6 +228,7 @@
 /* ========================================
    INVENTÁRIO
 ======================================== */
+.character-inventory-list,
 .inventory-list {
     margin-top: 10px;
 }
@@ -240,6 +261,7 @@
 /* ========================================
    ITENS MÁGICOS
 ======================================== */
+.character-magic-items-list,
 .magic-items-list {
     margin-top: 10px;
     display: flex;
@@ -385,6 +407,7 @@
 /* ========================================
    SISTEMA DE MAGIAS
 ======================================== */
+.character-spell-slots-grid,
 .spell-slots-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -392,6 +415,7 @@
     margin-top: 20px;
 }
 
+.character-spell-level-section,
 .spell-level-section {
     background: rgba(0, 0, 0, 0.3);
     border: 2px solid var(--cor11);
@@ -399,6 +423,7 @@
     overflow: hidden;
 }
 
+.character-spell-level-header,
 .spell-level-header {
     padding: 12px 15px;
     background: linear-gradient(135deg, var(--brilho-laranja), var(--cor15));
@@ -413,6 +438,7 @@
     background: linear-gradient(135deg, var(--cor15), var(--cor16));
 }
 
+.character-spell-level-info,
 .spell-level-info {
     display: flex;
     flex-direction: column;
@@ -420,6 +446,7 @@
     flex: 1;
 }
 
+.character-spell-level-title,
 .spell-level-title {
     font-family: 'Cinzel', serif;
     font-size: 0.95rem;
@@ -429,12 +456,15 @@
     letter-spacing: 1px;
 }
 
+.character-spell-slots,
 .spell-slots {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
+.character-slot-current,
+.character-slot-max,
 .slot-current,
 .slot-max {
     width: 50px;
@@ -448,12 +478,14 @@
     border-radius: 0;
 }
 
+.character-slot-separator,
 .slot-separator {
     color: var(--cor8);
     font-size: 1.2rem;
     font-weight: 700;
 }
 
+.character-spell-expand-btn,
 .spell-expand-btn {
     background: transparent;
     border: none;
@@ -468,6 +500,7 @@
     transform: rotate(180deg);
 }
 
+.character-spell-level-content,
 .spell-level-content {
     max-height: 0;
     overflow: hidden;
@@ -478,6 +511,7 @@
     max-height: 2000px;
 }
 
+.character-spell-list,
 .spell-list {
     padding: 15px;
     display: flex;
@@ -709,6 +743,7 @@
 /* ========================================
    INDIVIDUOS E DESCRIÇÕES
 ======================================== */
+.character-individuals-list,
 .individuals-list {
     margin-top: 10px;
     display: flex;
@@ -817,5 +852,233 @@
 .individuals-unit-actions .delete-btn {
     padding: 8px 20px;
     font-size: 0.9rem;
+}
+
+
+/* ── Container dos três heróis ── */
+.character-combat-row,
+.combat-hero-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 18px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.character-combat-stat,
+.combat-hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── Shape wrapper ── */
+.character-combat-shape,
+.combat-hero-shape {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: text;
+}
+
+.combat-hero-shape svg.shape-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    filter: drop-shadow(0 5px 12px rgba(0,0,0,0.55));
+    transition: filter 0.25s ease, transform 0.2s ease;
+}
+
+.combat-hero-shape:hover svg.shape-bg {
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.75));
+    transform: translateY(-2px);
+}
+
+/* ── Inputs dentro das formas ── */
+.combat-hero-shape .shape-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.character-combat-value,
+.hero-main-val {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    text-align: center !important;
+    font-family: 'Cinzel', serif !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8) !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    -moz-appearance: textfield !important;
+}
+
+.hero-main-val::-webkit-outer-spin-button,
+.hero-main-val::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.hero-sub-val {
+    background: transparent !important;
+    border: none !important;
+    border-top: 1px solid rgba(255,255,255,0.3) !important;
+    outline: none !important;
+    text-align: center !important;
+    font-family: 'Crimson Text', serif !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,0.75) !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7) !important;
+    padding: 2px 0 0 0 !important;
+    margin-top: 2px !important;
+    line-height: 1 !important;
+    -moz-appearance: textfield !important;
+}
+
+.hero-sub-val::-webkit-outer-spin-button,
+.hero-sub-val::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* ── Label abaixo das formas ── */
+.character-combat-label,
+.combat-hero-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cor4, #8b6914);
+    text-align: center;
+}
+
+/* ── Tamanhos específicos ── */
+.character-heart-main,
+.shape-vida { width: 138px; height: 130px; }
+.character-shield-shape,
+.shape-ca   { width: 108px; height: 122px; }
+.character-lightning-shape,
+.shape-init { width: 86px;  height: 122px; }
+.character-heart-max,
+.shape-vida-max  { width: 80px; height: 79px; }
+.character-heart-temp,
+.shape-vida-temp { width: 80px; height: 79px; }
+
+/* ── Estilos para corações pequenos ── */
+.combat-hero-stat.small-heart {
+    align-self: center;
+}
+
+.combat-hero-stat.main-heart {
+    align-self: flex-end;
+    order: 1;
+}
+
+.combat-hero-row .small-heart:first-child {
+    order: 0;
+}
+
+.combat-hero-row .small-heart:last-child {
+    order: 2;
+}
+
+.small-val {
+    font-size: 1.2em !important;
+}
+
+.small-label {
+    font-size: 0.6em !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* ── PV Temp embaixo do coração ── */
+.pv-temp-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pv-temp-badge label.input-label {
+    font-size: 0.68em;
+    opacity: 0.7;
+    margin: 0;
+    white-space: nowrap;
+    font-family: 'Cinzel', serif;
+}
+
+.pv-temp-badge input {
+    width: 54px !important;
+    font-size: 0.85em !important;
+    padding: 3px 5px !important;
+    text-align: center !important;
+    border-radius: 5px !important;
+}
+
+/* ── Glow on focus ── */
+/* CA → azul */
+.shape-ca .hero-main-val:focus,
+.character-shield-shape .character-combat-value:focus { box-shadow: none; text-shadow: 0 0 12px #90c8ff, 0 2px 4px rgba(0,0,0,0.8) !important; }
+/* Vida → vermelho */
+.shape-vida .hero-main-val:focus,
+.character-heart-main .character-combat-value:focus  { box-shadow: none; text-shadow: 0 0 12px #ff9090, 0 2px 4px rgba(0,0,0,0.8) !important; }
+.shape-vida .hero-sub-val:focus,
+.character-heart-main .hero-sub-val:focus   { box-shadow: none; text-shadow: 0 0 8px  #ff9090, 0 1px 3px rgba(0,0,0,0.7) !important; }
+/* Vida Máxima → azul */
+.shape-vida-max .hero-main-val:focus,
+.character-heart-max .character-combat-value:focus { box-shadow: none; text-shadow: 0 0 10px #70b0f0, 0 2px 4px rgba(0,0,0,0.8) !important; }
+/* Vida Temporária → dourado */
+.shape-vida-temp .hero-main-val:focus,
+.character-heart-temp .character-combat-value:focus { box-shadow: none; text-shadow: 0 0 10px #f5d070, 0 2px 4px rgba(0,0,0,0.8) !important; }
+/* Init → amarelo */
+.shape-init .hero-main-val:focus,
+.character-lightning-shape .character-combat-value:focus  { box-shadow: none; text-shadow: 0 0 12px #ffe080, 0 2px 4px rgba(0,0,0,0.8) !important; }
+
+/* ── Responsivo ── */
+@media (max-width: 540px) {
+    .shape-ca   { width: 88px;  height: 100px; }
+    .shape-vida { width: 112px; height: 106px; }
+    .shape-init { width: 70px;  height: 100px; }
+    .shape-vida-max  { width: 65px; height: 65px; }
+    .shape-vida-temp { width: 65px; height: 65px; }
+    .hero-main-val { font-size: 1.5em !important; }
+}
+
+/* ========================================
+   ELEMENTOS DE DISPLAY (Visualização)
+======================================== */
+.info-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.display-value {
+    padding: 10px;
+    background: var(--cor12);
+    color: var(--cor19);
+    font-weight: 700;
+    border: 1px solid var(--cor11);
+    border-radius: 4px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.bonus-value-display {
+    font-size: 2.0rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--cor3);
+    margin-bottom: 8px;
 }
 

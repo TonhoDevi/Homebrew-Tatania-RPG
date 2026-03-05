@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compêndio de Classes - D&D 5e Homebrew</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/1-variables.css">
+    <link rel="stylesheet" href="/css/2-base.css">
+    <link rel="stylesheet" href="/css/3-components.css">
+    <link rel="stylesheet" href="/css/4-navbar.css">
+    <link rel="stylesheet" href="/css/5-home.css">
+    <link rel="stylesheet" href="/css/8-responsive.css">
+    <!-- CSS exclusivo do compêndio de classes -->
+    <link rel="stylesheet" href="/css/compendium/classes.css">
+    <!-- (anteriormente os estilos estavam embutidos aqui) -->
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">🎲 D&D 5e Homebrew</a>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="character-sheet.html">Ficha</a></li>
+            <li><a href="compendium-races.html">Raças</a></li>
+            <li><a href="compendium-classes.html" class="active">Classes</a></li>
+        </ul>
+        <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-classes">
+    <span class="hero-eyebrow">Tomo das Vocações</span>
+    <h1>Compêndio de Classes</h1>
+    <div class="hero-divider"><div class="hero-gem"></div></div>
+    <p>Escolha seu caminho — cada classe carrega uma história, um poder e um destino</p>
+</header>
+
+<!-- FILTROS -->
+<div class="filtros-classes">
+    <div class="filtros-inner">
+        <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchClass" class="search-input-cls"
+                   placeholder="Buscar por nome, habilidade, subclasse..." autocomplete="off">
+        </div>
+        <select id="filterDificuldade" class="filter-sel">
+            <option value="">Todas as dificuldades</option>
+            <option value="Básico">Básico</option>
+            <option value="Intermediário">Intermediário</option>
+            <option value="Avançado">Avançado</option>
+        </select>
+        <select id="filterRole" class="filter-sel">
+            <option value="">Todos os papéis</option>
+            <option value="Dano">Dano</option>
+            <option value="Suporte">Suporte</option>
+            <option value="Controle">Controle</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Magia">Magia</option>
+            <option value="Tanque">Tanque</option>
+        </select>
+    </div>
+</div>
+
+<div class="results-bar" id="resultsBar">
+    Mostrando <strong>0</strong> classes
+</div>
+
+<!-- GRID -->
+<section class="classes-section">
+    <div class="classes-container">
+        <div class="classes-grid" id="classesGrid">
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-cls">
+    <p>© 2025 D&D 5e Homebrew — Criado por TonhoDevi</p>
+    <nav class="footer-links">
+        <a href="https://github.com/TonhoDevi/FichaProject" target="_blank">GitHub</a>
+        <a href="/html/index.html">Início</a>
+        <a href="/html/sheet/character-sheet.html">Ficha</a>
+        <a href="/html/compendium/compendium-races.html">Raças</a>
+        <a href="/html/compendium/compendium-classes.html">Classes</a>
+    </nav>
+</footer>
+
+<script src="/js/compendium/data-classes.js"></script>
+<script src="/js/compendium/compendium-classes.js"></script>
+<script src="/js/shared/navbar.js"></script>
+</body>
+</html>
