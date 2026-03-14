@@ -46,7 +46,6 @@ function getCurrentCharacter() {
         po: document.getElementById('po').value,
         pp: document.getElementById('pp').value,
         idiomas: document.getElementById('idiomas').value,
-        caracteristicas: document.getElementById('caracteristicas').value,
         tesouro: document.getElementById('tesouro').value,
         habilidadeMagia: document.getElementById('habilidadeMagia').value,
         extraBonusMagia: document.getElementById('extraBonusMagia').value,
@@ -120,7 +119,7 @@ function loadCharacterData(char) {
     document.getElementById('deslocNadar').value = char.deslocNadar || '15';
     document.getElementById('deslocVoar').value = char.deslocVoar || '-';
     document.getElementById('deslocEscalar').value = char.deslocEscalar || '15';
-    document.getElementById('salto').value = char.Salto || '0';
+    document.getElementById('salto').value = char.salto || '0';
     document.getElementById('dadosVida').value = char.dadosVida || '';
     document.getElementById('pvTotais').value = char.pvTotais || 0;
     document.getElementById('pvAtuais').value = char.pvAtuais || 0;
@@ -446,39 +445,6 @@ function validateCharacterData(data) {
     }
     
     return true;
-}
-
-function exportCharacterJSON() {
-    const char = getCurrentCharacter();
-    
-    if (!char.nomePersonagem) {
-        alert('Por favor, preencha o nome do personagem antes de exportar.');
-        return;
-    }
-    
-
-    const json = JSON.stringify(char, null, 2);
-    
-
-    const blob = new Blob([json], { type: 'application/json' });
-    
-
-    const url = URL.createObjectURL(blob);
-    
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `${sanitizeFileName(char.nomePersonagem)}.json`;
-    
-
-    document.body.appendChild(link);
-    link.click();
-    
-
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-    
-
-    showExportSuccess();
 }
 
 

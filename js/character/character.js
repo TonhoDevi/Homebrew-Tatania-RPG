@@ -75,6 +75,7 @@ function calculateModifiers() {
     calculateSkills();
     calculateMagicBonus();
     calculateMagicCd();
+    autoSave();
 }
 
 function calculateSavingThrows() {
