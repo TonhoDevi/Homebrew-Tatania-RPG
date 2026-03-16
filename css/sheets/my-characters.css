@@ -1,0 +1,274 @@
+/* ================================================================
+   meus-personagens.css
+   Coloque em: css/meus-personagens.css
+================================================================ */
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(139,26,26,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 80%, rgba(80,40,10,0.18) 0%, transparent 50%),
+        #0a0703;
+}
+
+/* ── LAYOUT ── */
+.page-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+/* ── HEADER ── */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.page-header-rune {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 14px rgba(220,170,50,0.5));
+}
+.page-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #e8c96a;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 20px rgba(220,170,50,0.3);
+    margin: 0 0 6px;
+}
+.page-header p {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgba(200,175,120,0.6);
+    font-size: 1rem;
+}
+#contadorFichas {
+    margin-top: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(200,160,60,0.5);
+}
+
+/* ── FILTROS ── */
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    background: rgba(200,160,60,0.08);
+    border: 1px solid rgba(200,160,60,0.2);
+    border-radius: 2px;
+    color: rgba(200,160,60,0.55);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.filter-btn.active,
+.filter-btn:hover {
+    background: rgba(200,160,60,0.16);
+    border-color: rgba(200,160,60,0.5);
+    color: #dfc170;
+}
+
+/* ── BOTÕES NOVA FICHA ── */
+.new-sheet-bar {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+.btn-new {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.btn-new::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+.btn-new-dnd {
+    background: linear-gradient(135deg, #8b1a1a 0%, #6b1010 100%);
+    color: #f0d090;
+    box-shadow: 0 4px 16px rgba(139,26,26,0.4);
+}
+.btn-new-mem {
+    background: linear-gradient(135deg, #1a3a8b 0%, #102060 100%);
+    color: #90c0f0;
+    box-shadow: 0 4px 16px rgba(26,58,139,0.4);
+}
+.btn-new:hover:not(:disabled) { transform: translateY(-2px); }
+
+/* ── GRADE DE FICHAS ── */
+.sheets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.sheet-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(200,160,60,0.18);
+    border-radius: 3px;
+    padding: 20px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    overflow: hidden;
+}
+.sheet-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(200,160,60,0.5), transparent);
+}
+.sheet-card.tipo-dnd::before {
+    background: linear-gradient(90deg, transparent, rgba(180,40,40,0.7), transparent);
+}
+.sheet-card.tipo-mem::before {
+    background: linear-gradient(90deg, transparent, rgba(40,80,180,0.7), transparent);
+}
+.sheet-card:hover {
+    border-color: rgba(200,160,60,0.4);
+    transform: translateY(-2px);
+}
+
+/* ── BADGE DE TIPO ── */
+.sheet-card-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.badge-dnd { background: rgba(180,40,40,0.2);  color: #e08080; border: 1px solid rgba(180,40,40,0.3); }
+.badge-mem { background: rgba(40,80,180,0.2);  color: #80a0e0; border: 1px solid rgba(40,80,180,0.3); }
+
+/* ── CARD CONTENT ── */
+.sheet-card-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #dfc170;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sheet-card-date {
+    font-family: 'Crimson Text', serif;
+    font-size: 0.82rem;
+    color: rgba(200,175,120,0.45);
+    font-style: italic;
+    margin-bottom: 16px;
+}
+.sheet-card-actions {
+    display: flex;
+    gap: 8px;
+}
+.btn-open {
+    flex: 1;
+    padding: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(200,160,60,0.12);
+    border: 1px solid rgba(200,160,60,0.3);
+    border-radius: 2px;
+    color: #dfc170;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-open:hover { background: rgba(200,160,60,0.22); }
+.btn-delete {
+    padding: 8px 10px;
+    background: rgba(180,40,40,0.12);
+    border: 1px solid rgba(180,40,40,0.25);
+    border-radius: 2px;
+    color: #e08080;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+.btn-delete:hover { background: rgba(180,40,40,0.25); }
+
+/* ── EMPTY STATE ── */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    grid-column: 1 / -1;
+}
+.empty-state-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 16px;
+    opacity: 0.4;
+}
+.empty-state p {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgba(200,175,120,0.45);
+    font-size: 1rem;
+}
+
+/* ── LOADING ── */
+.loading-state {
+    text-align: center;
+    padding: 60px;
+    grid-column: 1 / -1;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgba(200,175,120,0.45);
+}
+.loader {
+    display: inline-block;
+    width: 20px; height: 20px;
+    border: 2px solid rgba(200,160,60,0.2);
+    border-top-color: rgba(200,160,60,0.7);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+    .sheets-grid { grid-template-columns: 1fr; }
+    .new-sheet-bar { flex-direction: column; align-items: center; }
+    .btn-new { width: 100%; max-width: 280px; }
+}

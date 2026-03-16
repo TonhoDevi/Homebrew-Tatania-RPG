@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Personagens — Templo de Tatânea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/1-variables.css">
+    <link rel="stylesheet" href="/css/2-base.css">
+    <link rel="stylesheet" href="/css/4-navbar.css">
+    <link rel="stylesheet" href="/css/sheets/my-characters.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/index.html" class="navbar-logo">Templo de Tatânea</a>
+            <ul class="navbar-menu">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/html/sheet/my-characters-sheet.html" class="active">Meus Personagens</a></li>
+            </ul>
+            <button class="navbar-toggle" onclick="toggleNavbar()">🎲</button>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <div class="page-header">
+            <span class="page-header-rune">📜</span>
+            <h1>Meus Personagens</h1>
+            <p>Todas as suas fichas salvas na nuvem</p>
+            <div id="contadorFichas"></div>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="setFilter('')">Todas</button>
+            <button class="filter-btn" onclick="setFilter('dnd')">⚔️ D&D 5e</button>
+            <button class="filter-btn" onclick="setFilter('mem')">🦸 M&M 3e</button>
+        </div>
+
+        <div class="new-sheet-bar">
+            <button class="btn-new btn-new-dnd" onclick="novaFicha('dnd')">
+                ⚔️ Nova Ficha D&D
+            </button>
+            <button class="btn-new btn-new-mem" onclick="novaFicha('mem')">
+                🦸 Nova Ficha M&M
+            </button>
+        </div>
+
+        <div class="sheets-grid" id="sheetsGrid">
+            <div class="loading-state">
+                <span class="loader"></span> Carregando fichas...
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/shared/supabase-auth.js"></script>
+    <script src="/js/shared/cloud-save.js"></script>
+    <script src="/js/shared/navbar.js"></script>
+    <script src="/js/character/my-characters.js"></script>
+</body>
+</html>
