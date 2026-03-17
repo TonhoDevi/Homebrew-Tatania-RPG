@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/4-navbar.css">
     <link rel="stylesheet" href="css/6-character.css">
     <link rel="stylesheet" href="css/8-responsive.css">
-    <link rel="stylesheet" href="css/9-dice-roller.css">
+    <link rel="stylesheet" href="css/navbar/dice-roller.css">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/shared/supabase-auth.js"></script>
@@ -844,41 +844,121 @@
     </div>
 
     </div><!-- /app-container -->
-
     <!-- Modal: Dice Roller -->
     <div class="modal" id="diceModal" aria-hidden="true">
-        <div class="modal-content dice-modal-content">
-            <button class="menu-close" id="closeDiceBtn">✕</button>
-            <h2 class="modal-title">Lançador de Dados</h2>
-            <div class="dice-grid">
-                <div class="dice-controls">
-                    <label>Quantidade</label>
-                    <div class="qty-spinner">
-                        <button class="qty-btn" id="qtyDown">▾</button>
-                        <span id="diceQty" class="qty-display">1</span>
-                        <button class="qty-btn" id="qtyUp">▴</button>
-                    </div>
-                    <label>Tipo</label>
-                    <div class="dice-type-buttons" id="diceType">
-                        <button class="die-btn die-d4" data-sides="4" title="d4">d4</button>
-                        <button class="die-btn die-d6" data-sides="6" title="d6">d6</button>
-                        <button class="die-btn die-d8" data-sides="8" title="d8">d8</button>
-                        <button class="die-btn die-d10" data-sides="10" title="d10">d10</button>
-                        <button class="die-btn die-d12" data-sides="12" title="d12">d12</button>
-                        <button class="die-btn die-d20 active" data-sides="20" title="d20">d20</button>
-                        <button class="die-btn die-d100" data-sides="100" title="d100">d100</button>
-                    </div>
-                    <div style="display:flex; gap:8px; margin-top:6px;">
-                        <button class="btn btn-primary" id="rollDiceBtn">🎲 Rolar</button>
-                        <button class="btn btn-secondary" id="clearDiceBtn">Limpar</button>
-                    </div>
+    <div class="modal-content dice-modal-content">
+        <button class="menu-close" id="closeDiceBtn">✕</button>
+        <h2 class="modal-title">Lançador de Dados</h2>
+
+        <div class="dice-grid">
+
+        <!-- Controles -->
+        <div class="dice-controls">
+
+            <div>
+            <div class="ctrl-label">Quantidade</div>
+            <div class="qty-spinner">
+                <button class="qty-btn" id="qtyDown">−</button>
+                <span class="qty-display" id="diceQty">1</span>
+                <button class="qty-btn" id="qtyUp">+</button>
+            </div>
+            </div>
+
+            <div>
+            <div class="ctrl-label">Tipo de Dado</div>
+
+            <!--
+                Layout losango:
+                ------d6------
+                d4---------d8
+                -----d20------   (maior)
+                d10-------d12
+                -----d100-----
+
+                Cada .die-oct-wrap envolve o botão para efeito octógono + borda via drop-shadow
+            -->
+            <div class="dice-diamond" id="diceType">
+
+                <div class="diamond-row center">
+                <div class="die-oct-wrap">
+                    <button class="die-btn" data-sides="6" data-label="d6" title="d6">
+                    <span>d6</span>
+                    </button>
                 </div>
-                <div class="dice-results" id="diceResults">
-                    <div class="results-list" id="resultsList"></div>
-                    <div class="results-sum" id="resultsSum"></div>
                 </div>
+
+                <div class="diamond-row sides">
+                <div class="die-oct-wrap">
+                    <button class="die-btn" data-sides="4" data-label="d4" title="d4">
+                    <span>d4</span>
+                    </button>
+                </div>
+                <div class="die-oct-wrap">
+                    <button class="die-btn" data-sides="8" data-label="d8" title="d8">
+                    <span>d8</span>
+                    </button>
+                </div>
+                </div>
+
+                <div class="diamond-row center">
+                <div class="die-oct-wrap die-oct-wrap--d20">
+                    <button class="die-btn die-btn--d20 active" data-sides="20" data-label="d20" title="d20">
+                    <span>d20</span>
+                    </button>
+                </div>
+                </div>
+
+                <div class="diamond-row sides">
+                <div class="die-oct-wrap">
+                    <button class="die-btn" data-sides="10" data-label="d10" title="d10">
+                    <span>d10</span>
+                    </button>
+                </div>
+                <div class="die-oct-wrap">
+                    <button class="die-btn" data-sides="12" data-label="d12" title="d12">
+                    <span>d12</span>
+                    </button>
+                </div>
+                </div>
+
+                <div class="diamond-row center">
+                <div class="die-oct-wrap">
+                    <button class="die-btn" data-sides="100" data-label="d100" title="d100">
+                    <span>d100</span>
+                    </button>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <div class="roll-actions">
+            <button class="btn btn-roll" id="rollDiceBtn">🎲 Rolar</button>
+            <button class="btn btn-clear" id="clearDiceBtn">Limpar</button>
+            </div>
+
+        </div><!-- /dice-controls -->
+
+        <!-- Resultados -->
+        <div class="dice-results-panel">
+            <div class="dice-stage" id="diceResults">
+            <div class="empty-state" id="emptyState">
+                <div id="emptyShapeWrap"></div>
+                <p>Aguardando rolagem</p>
+            </div>
+            <div class="rolling-overlay" id="rollingOverlay"></div>
+            <div class="results-list" id="resultsList"></div>
+            </div>
+
+            <div class="results-summary" id="resultsSummary" style="display:none;">
+            <span class="summary-label">Total</span>
+            <span class="summary-total" id="resultsTotal"></span>
+            <span class="summary-breakdown" id="resultsBreakdown"></span>
             </div>
         </div>
+
+        </div><!-- /dice-grid -->
+    </div>
     </div>
 
     <!-- Footer -->
